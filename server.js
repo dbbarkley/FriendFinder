@@ -2,8 +2,8 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-var htmlRouting = require("./app/routing/htmlRoutes");
-var apiRoutes = require("./app/routing/apiRoutes");
+var htmlR = require("./app/routing/htmlRoutes");
+var apiR = require("./app/routing/apiRoutes");
 
 // Sets up the Express App
 // =============================================================
@@ -15,8 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // All routes
-htmlRouting(app);
-//apiRoutes(app);
+htmlR(app);
+//apiR(app);
 
 // Listen
 app.listen(PORT, function() {
