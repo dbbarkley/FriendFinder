@@ -16,7 +16,7 @@ app.use(express.json());
 
 // All routes
 htmlR(app);
-//apiR(app);
+apiR(app);
 
 // Listen
 app.listen(PORT, function() {
