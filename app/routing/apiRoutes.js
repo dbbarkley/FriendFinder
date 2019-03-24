@@ -1,42 +1,56 @@
+var friends = require("../data/friends");
 
-const fs = require("fs");
-const path = require("path");
+module.exports = function(app) {
 
-module.exports = (app) => {
-    let friends = [];
+  app.post("/api/friends", function(req, res) {
 
-    // Post , data from survey
-    app.post("/api/friends", (req, res) => {
-        // Grab data from client-side
-        var newFriend = req.body;
-        // adding to array to start, if there in no data inside array, add to friends.js file
-        if(friends.length === 0) {
-            friends.push(newFriend);
-            res.send(friends);
-            // Update friends.js file 
-            fs.writeFile(path.join(__dirname, "../data/friends.js"), JSON.stringify(friends), (err) => {
-                if(err) throw err;
-                console.log("Updated!");
-            })
-        // Array Filter to see if there are any data that has the exact same name and photo (duplicate entries)
-        } else if (friends.filter(e => (e.name === newFriend.name && e.photo === newFriend.photo)).length > 0) {
-                res.send(`Hello ${newFriend.name}, Please use a different name & photo for your new profile. `);
-            // not a duplicate -> add to array & write to friends.js file
-            } else {
-                friends.push(newFriend);
-                    // Update friends.js file 
-                fs.writeFile(path.join(__dirname, "../data/friends.js"), JSON.stringify(friends), (err) => {
-                    if(err) throw err;
-                    console.log("Updated!")
-                })
-                res.send(friends);
-                
-            }
-        }
-    );
+    var newUser = req.body;
+    var newUserScore = newUser.scores;
 
+    var newUserScoreNumber = newUserScore.map(Number);
+    function add(accumulator, a) {
+      return accumulator + a;
+    }
+    const sum = newUserScoreNumber.reduce(add);
 
-    app.get("/api/friends", (req, res) => {
-        return res.json(friends);
-    });
-}
+    var sumArrayUsers = [];
+    for (i = 0; i < friends.length; i++) {
+      function add(accumulator, a) {
+        return accumulator + a;
+      }
+      const sumUser = friends[i].scores.reduce(add);
+
+      sumArrayUsers.push(sumUser);
+    }
+
+    var difArray = [];
+    for (i = 0; i < sumArrayUsers.length; i++) {
+      var dif = sumArrayUsers[i] - sum;
+      var difAbs = Math.abs(dif);
+      difArray.push(difAbs);
+    }
+
+    var lowest = 0;
+    function smallest(difArray) {
+      lowest = 0;
+      for (var i = 1; i < difArray.length; i++) {
+        if (difArray[i] < difArray[lowest]) lowest = i;
+      }
+      return lowest;
+    }
+    smallest(difArray);
+
+    var match = {
+      name: friends[lowest].name,
+      photo: friends[lowest].photo,
+      friendDifference: difArray[lowest]
+    };
+
+    friends.push(req.body);
+    res.json(match);
+  });
+
+  app.get("/api/friends", function(req, res) {
+    res.json(friends);
+  });
+};

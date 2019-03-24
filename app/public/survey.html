@@ -5,8 +5,8 @@
                 <title>FriendFinder</title>
                 <!-- Latest compiled and minified CSS & JS -->
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
               
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
@@ -47,9 +47,9 @@
             <h5><strong>Question 1</strong></h5>
             <h6>My goals in life are clear.</h6>
                 <div class="row">
-                    <div class="input-field col s6" id="q1 clear-data">
-                        <select class="clear">
-                            <option value="0"></option>
+                    <div class="input-field col s6">
+                        <select data-placeholder="" class="clear" id="q1">
+                            <option value=""></option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -64,9 +64,9 @@
             <h5><strong>Question 2</strong></h5>
             <h6>If people are rude to me I just shrug it off.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q2 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q2">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -81,9 +81,9 @@
             <h5><strong>Question 3</strong></h5>
             <h6>I am confident in what I do.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q3 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q3">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -98,9 +98,9 @@
             <h5><strong>Question 4</strong></h5>
             <h6>I can work even when things are disorganised.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q4 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q4">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -115,9 +115,9 @@
             <h5><strong>Question 5</strong></h5>
             <h6>I consistently put full time and effort into everything I do.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q5 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q5">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -132,9 +132,9 @@
             <h5><strong>Question 6</strong></h5>
             <h6>I would describe myself as an extremely competent person.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q6 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q6">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -149,9 +149,9 @@
             <h5><strong>Question 7</strong></h5>
             <h6>I prefer working within a stable rather than flexible environment.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q7 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q7">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -166,9 +166,9 @@
             <h5><strong>Question 8</strong></h5>
             <h6>I am ambitious.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q8 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q8">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -183,9 +183,9 @@
             <h5><strong>Question 9</strong></h5>
             <h6>It's better to get a job done than aim for perfection.</h6>
                 <div class="row">
-                        <div class="input-field col s6" id="q9 clear-data">
-                            <select class="clear">
-                                <option value="0"></option>
+                        <div class="input-field col s6">
+                            <select class="clear" id="q9">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -201,8 +201,8 @@
             <h6>I like to be in charge of other people.</h6>
                 <div class="row" id="test">
                         <div class="input-field col s6" id="q10">
-                            <select class="clear">
-                                <option value="0"></option>
+                            <select data-placeholder="" class="clear">
+                                <option value=""></option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -233,25 +233,16 @@
             </footer>
             
               </div>
-              <div id="results-modal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
     
             <!-- Modal content-->
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h2 class="modal-title"><strong>Best Match</strong></h2>
-            </div>
-            <div class="modal-body">
-                <h2 id="match-name"></h2>
-                <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4 class="text-center">Meet Your New BFF:</h4>
+                    <h5 class="text-center" id="matchName"></h5>
+                    <img id="matchPic" src="" alt="No Image">
+                </div>
             </div>
     
-        </div>
         </div>
         
         <script type="text/javascript">
@@ -260,26 +251,11 @@
             var elems = document.querySelectorAll('select');
             var instances = M.FormSelect.init(elems);
         });
-        // Chosen CSS
-       /* var config = {
-            ".chosen-select": {},
-            ".chosen-select-deselect": {
-            allow_single_deselect: true
-            },
-            ".chosen-select-no-single": {
-            disable_search_threshold: 10
-            },
-            ".chosen-select-no-results": {
-            no_results_text: "Oops, nothing found!"
-            },
-            ".chosen-select-width": {
-            width: "95%"
-            }
-        };
-    */
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
 
-
-    
         // Capture the form inputs
         $("#submit").on("click", function(event) {
             event.preventDefault();
@@ -300,22 +276,32 @@
                 $("#q10 option:selected").val(),
                 ]
             };
-            $("#name").val('');
-            $("#photo").val('');
+
             console.log(userData);
 
-            
-
-    
+            var currentURL = window.location.origin;
             // AJAX post the data to the friends API.
-            $.post("/api/friends", userData, function(data) {
+            $.post(currentURL + "/api/friends", userData, function(data) {
     
                 // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                $("name").text(data.name);
-                $("#photo").attr("src", data.photo);
+                $("#matchName").text(data.name);
+                $("#matchPic").attr("src", data.photo);
     
                 // Show the modal with the best match
-                $("#results-modal").modal("toggle");
+                $('.modal').modal('open');
+
+                $("#name").val('');
+                $("#photo").val('');
+                $('#q1').val("");
+                $('#q2').val("");
+                $('#q3').val("");
+                $('#q4').val("");
+                $('#q5').val("");
+                $('#q6').val("");
+                $('#q7').val("");
+                $('#q8').val("");
+                $('#q9').val("");
+                $('#q10').val("0");
     
             });
             
